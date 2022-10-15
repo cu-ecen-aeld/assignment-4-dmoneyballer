@@ -10,8 +10,8 @@ AESD_ASSIGNMENTS_VERSION = 95647a27f198422fa1ab1ef79d346a4c2816672f
 # Note: Be sure to reference the *ssh* repository URL here (not https) to work properly
 # with ssh keys and the automated build/test system.
 # Your site should start with git@github.com:
-AESD_ASSIGNMENTS_SITE = "https://github.com/cu-ecen-aeld/assignments-3-and-later-dmoneyballer.git"
-AESD_ASSIGNMENTS_SITE_METHOD = https
+AESD_ASSIGNMENTS_SITE = "git@github.com:cu-ecen-aeld/assignments-3-and-later-dmoneyballer.git"
+AESD_ASSIGNMENTS_SITE_METHOD = git 
 AESD_ASSIGNMENTS_GIT_SUBMODULES = YES
 
 define AESD_ASSIGNMENTS_BUILD_CMDS
