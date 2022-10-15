@@ -9,8 +9,8 @@ jobs:
           - uses: actions/checkout@v2
           - name: Checkout submodules
             run: git submodule update --init --recursive
-          - uses: eval "$(ssh-agent -s)"
-          - uses: ssh-add ~/.ssh/id_ed25519
+            run: eval "$(ssh-agent -s)"
+            run: ssh-add ~/.ssh/id_ed25519
           - uses: webfactory/ssh-agent@v0.5.3
             with:
               ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
