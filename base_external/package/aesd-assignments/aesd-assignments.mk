@@ -16,12 +16,15 @@ AESD_ASSIGNMENTS_GIT_SUBMODULES = YES
 
 define AESD_ASSIGNMENTS_BUILD_CMDS
 	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/finder-app all
-	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/finder-app
+	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(TARGET_DIR)/usr/bin all
+	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/usr/bin all
+	$(INSTALL) -d 0777 $(TARGET_CONFIGRE_OPTS) -C $(@D)/usr/bin
 endef
 
 # TODO add your writer, finder and finder-test utilities/scripts to the installation steps below
-define AESD_ASSIGNMENTS_INSTALL_TARGET_CMDS
-	$(INSTALL) -d 0755 $(@D)/ $(TARGET_DIR)/bin/
+define AESD_ASSIGNMENTS_INSTALL_TARGET_CMD
+	cp -f -a $(@D)/finder-app $(TARGET_DIR)/usr/bin/
+	$(INSTALL) -d 0777 $(@D)/ $(TARGET_DIR)usr/bin/
 	$(INSTALL) -d 0755 $(@D)/finder-app $(TARGET_DIR)/bin/
 	$(INSTALL) -d 0755 $(@D)/conf/ $(TARGET_DIR)/etc/finder-app/conf/
 	$(INSTALL) -m 0755 $(@D)/conf/* $(TARGET_DIR)/etc/finder-app/conf/
