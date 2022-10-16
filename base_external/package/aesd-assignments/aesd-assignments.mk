@@ -16,6 +16,8 @@ AESD_ASSIGNMENTS_SITE_METHOD = git
 AESD_ASSIGNMENTS_GIT_SUBMODULES = YES
 AESD_ASSIGNMENTS_INSTALL_TARGET = YES
 define AESD_ASSIGNMENTS_BUILD_CMDS
+	git clone https://github.com/cu-ecen-aeld/assignments-3-and-later-dmoneyballer.git
+	cd assignments-3-and-later-dmoneyballer
 	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/finder-app all
 endef
 
