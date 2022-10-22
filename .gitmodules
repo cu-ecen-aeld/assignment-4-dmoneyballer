@@ -4,3 +4,6 @@
 [submodule "buildroot"]
 	path = buildroot
 	url = https://git.busybox.net/buildroot/
+[submodule "assignment-4-dmoneyballer"]
+	path = .
+	url = https://github.com/cu-ecen-aeld/assignment-4-dmoneyballer
